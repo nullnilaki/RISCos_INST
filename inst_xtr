@@ -72,7 +72,7 @@ Please mount $Pkgname tape number $Spkgvol and press return: $Sc"
       then
         Id="`su -c $Netuser /usr/ucb/rsh $EnTapehost < /dev/null dd if=$Taperw 2>/dev/null | sed -e '2,$d'`"
       else
-        Id="`dd if=$Taperw 2>/dev/null | sed -e '2,$d'`"
+        Id="`dd if=/umips4.52/bin/DUMMY_TAPE 2>/dev/null | sed -e '2,$d'`"
       fi
       case "$Id" in
    	"") Id=bogusid ;;
