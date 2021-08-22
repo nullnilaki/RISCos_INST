@@ -240,7 +240,7 @@ case $From in
 su -c $Netuser /usr/ucb/rsh "$EnTapehost" < /dev/null mt -f $Taperw rewind
           ##/usr/ucb/rsh $EnTapehost "mt -f $Taperw rewind"
         else
-          mt -f $Taperw rewind
+          :
         fi
         echo ""
       }
