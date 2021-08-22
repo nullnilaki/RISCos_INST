@@ -253,7 +253,7 @@ su -c $Netuser /usr/ucb/rsh "$EnTapehost" < /dev/null mt -f $Taperw rewind
 su -c $Netuser /usr/ucb/rsh "$EnTapehost" < /dev/null mt -f $Tapenrw fsf $1
           ##/usr/ucb/rsh $EnTapehost "mt -f $Tapenrw fsf $1"
         else
-          mt -f $Tapenrw fsf $1
+          :
         fi
         echo ""
       }
