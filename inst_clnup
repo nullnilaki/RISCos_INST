@@ -20,7 +20,7 @@ trap "" 0
 trap "" 1 2 3 15
 
 # ensure that shell verbose is turned off
-set +x
+set -x
 
 case "$Instenv" in
   "") . inst_env ;;

@@ -68,7 +68,7 @@ case $# in
   2) Prompt=$1
      Default=$2
      echo $Dn "$Prompt [$Default]? $Sc"
-     set +x
+     set -x
      read Ans </dev/tty
      case "$Ans" in
        "") Ans=$Default ;;
@@ -87,7 +87,7 @@ case $# in
        do
      
          echo $Dn "$Prompt ($Choices) [$Default]? $Sc"
-         set +x
+         set -x
          read Ans </dev/tty
      
          case $Ans in

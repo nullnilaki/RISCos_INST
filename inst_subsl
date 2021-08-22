@@ -12,7 +12,7 @@ case "$Instenv" in
   esac
 
 # force shell to keep quite
-set +x
+set -x
 		
 if [ "$Os2" = "y" ]
 then

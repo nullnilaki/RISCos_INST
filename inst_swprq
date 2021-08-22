@@ -7,7 +7,7 @@
 # | All Rights Reserved.                            |
 # ---------------------------------------------------
 
-set +x
+set -x
 
 # Ensure that the environment has been set
 
