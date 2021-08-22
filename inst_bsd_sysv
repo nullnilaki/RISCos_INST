@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 #
 # |-----------------------------------------------------------|
 # | Copyright (c) 1990 MIPS Computer Systems, Inc.            |

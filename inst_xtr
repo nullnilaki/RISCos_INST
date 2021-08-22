@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 #
 # $Header: inst_xtr.sh,v 2.4.1.8.1.2 90/07/11 18:24:17 hawkes Exp $
 #

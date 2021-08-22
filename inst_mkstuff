@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 #
 # $Header: inst_mkstuff.sh,v 2.1.1.2.1.2 90/07/11 18:23:00 hawkes Exp $
 #

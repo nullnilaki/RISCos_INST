@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 #
 # $Header: inst_swprq.sh,v 1.17.3.5.1.2 90/07/11 18:24:04 hawkes Exp $
 #
