@@ -28,18 +28,23 @@ positiontape()
   case $Tapen in
     1) case $Os in
          y) case $Os2 in
-              y) $Dbgecho fsf 20 ;; # id, instd, tpvls, mroot, unixes
-              n) $Dbgecho fsf 4 ;; # past id, instd, tapevol, mroot
+              y) $Dbgecho fsf 20
+                 tarfile=20 ;; # id, instd, tpvls, mroot, unixes
+              n) $Dbgecho fsf 4
+                 tarfile=4 ;; # past id, instd, tapevol, mroot
             esac ;;
-         n) $Dbgecho fsf 2 ;; # past id, instd
+         n) $Dbgecho fsf 2
+            tarfile=2 ;; # past id, instd
        esac ;;
-    *) $Dbgecho fsf 1 ;; # past id
+    *) $Dbgecho fsf 1
+       tarfile=1 ;; # past id
   esac
   echo ""
   File=1
   if [ "$File" -lt "$Spkgfile" ]
   then
     $Dbgecho fsf `expr $Spkgfile - $File`
+    tarfile=$Spkgfile
     File=$Spkgfile
   fi
 }
@@ -269,12 +274,16 @@ fi
 	      case $Tapen in
 		1) case $Os in
 	             y) case $Os2 in
-                         y) $Dbgecho fsf 20 ;; # id, instd, tpvls, mroot, unixes
-                         n) $Dbgecho fsf 4 ;; # past id, instd, tapevol, mroot
+                         y) $Dbgecho fsf 20
+                            tarfile=20 ;; # id, instd, tpvls, mroot, unixes
+                         n) $Dbgecho fsf 4
+                            tarfile=4  ;; # past id, instd, tapevol, mroot
                        esac ;;
-                     n) $Dbgecho fsf 2 ;; # past id, instd
+                     n) $Dbgecho fsf 2
+                        tarfile=2 ;; # past id, instd
 		     esac ;;
-	        *) $Dbgecho fsf 1 ;; # past id
+	        *) $Dbgecho fsf 1
+             tarfile=1 ;; # past id
 	        esac
 	      echo ""
               File=1
@@ -282,6 +291,7 @@ fi
           if [ "$File" -lt "$Spkgfile" ]
             then
               $Dbgecho fsf `expr $Spkgfile - $File`
+              tarfile=$Spkgfile
 	      File=$Spkgfile
             fi
 	  ;;
@@ -313,7 +323,7 @@ do
     $Dbgecho $Tar xvNfb $EnTapehost $Tapenrw 32 >$Verbose
     Tarexit=$?
   else
-    $Dbgecho $Tar xvfb $Tapenrw 32 >$Verbose
+    $Dbgecho $Tar xvfb /mnt/$tarfile 32 >$Verbose
     Tarexit=$?
   fi
   case $Tarexit in
