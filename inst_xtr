@@ -44,7 +44,9 @@ positiontape()
   if [ "$File" -lt "$Spkgfile" ]
   then
     $Dbgecho fsf `expr $Spkgfile - $File`
-    tarfile=$Spkgfile
+    if [ "$tarfile" -ne 20 ]
+        tarfile=`expr $Spkgfile - $File + 1`
+    fi
     File=$Spkgfile
   fi
 }
@@ -291,7 +293,9 @@ fi
           if [ "$File" -lt "$Spkgfile" ]
             then
               $Dbgecho fsf `expr $Spkgfile - $File`
-              tarfile=$Spkgfile
+    if [ "$tarfile" -ne 20 ]
+        tarfile=`expr $Spkgfile - $File + 1`
+    fi
 	      File=$Spkgfile
             fi
 	  ;;
