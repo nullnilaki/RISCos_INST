@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 #
 # $Header: inst_xtr.sh,v 2.4.1.8.1.2 90/07/11 18:24:17 hawkes Exp $
 #
@@ -45,7 +45,8 @@ positiontape()
   then
     $Dbgecho fsf `expr $Spkgfile - $File`
     if [ "$tarfile" -ne 20 ]
-        tarfile=`expr $Spkgfile - $File + 1`
+    then
+        tarfile=`expr $tarfile + $Spkgfile - $File + 1`
     fi
     File=$Spkgfile
   fi
@@ -294,7 +295,8 @@ fi
             then
               $Dbgecho fsf `expr $Spkgfile - $File`
     if [ "$tarfile" -ne 20 ]
-        tarfile=`expr $Spkgfile - $File + 1`
+    then
+        tarfile=`expr $tarfile + $Spkgfile - $File + 1`
     fi
 	      File=$Spkgfile
             fi
